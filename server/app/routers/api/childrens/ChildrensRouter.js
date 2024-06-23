@@ -13,7 +13,7 @@ const {
   edit,
   add,
   destroy,
-} = require("../../../controllers/ChildrensActions");
+} = require("../../../controllers/ChildrensAction");
 
 // Route to get a list of items
 router.get("/", browse);

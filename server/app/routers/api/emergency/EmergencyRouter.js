@@ -13,7 +13,7 @@ const {
   edit,
   add,
   destroy,
-} = require("../../../controllers/EmergencyActions");
+} = require("../../../controllers/emergencyAction");
 
 // Route to get a list of items
 router.get("/", browse);

@@ -32,7 +32,7 @@ CREATE TABLE childrens_parents (
     child_ID INT NOT NULL,
     parent_ID INT NOT NULL,
     relation VARCHAR(80) NOT NULL,
-    FOREIGN KEY (child_ID) REFERENCES Children(ID),
+    FOREIGN KEY (child_ID) REFERENCES Childrens(ID),
     FOREIGN KEY (parent_ID) REFERENCES Parents(ID)
 );
 
@@ -40,7 +40,7 @@ CREATE TABLE schedule_children (
 	  ID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	  child_ID INT NOT NULL,
 	  schedule_ID INT NOT NULL,
-    FOREIGN KEY (child_ID) REFERENCES Children(ID),
+    FOREIGN KEY (child_ID) REFERENCES Childrens(ID),
     FOREIGN KEY (schedule_ID) REFERENCES schedule(ID),
     Date DATE NOT NULL
 );
