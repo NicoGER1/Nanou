@@ -19,7 +19,7 @@ CREATE TABLE schedule (
     start_hour TIME NOT NULL
   );  
 
-CREATE TABLE children (
+CREATE TABLE childrens (
     ID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     avatar VARCHAR(255),
     firstname VARCHAR(80) NOT NULL,

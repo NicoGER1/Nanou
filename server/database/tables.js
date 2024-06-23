@@ -2,7 +2,7 @@
 const EmergencyRepository = require ("./models/EmergencyRepository");
 const ParentsRepository = require("./models/ParentsRepository");
 const ScheduleRepository = require ("./models/Schedule.Repository");
-const ChildrenRepository = require ("./models/Children.Repository");
+const ChildrensRepository = require ("./models/Childrens.Repository");
 const ChildrensParentsRepository = require ("./models/ChildrensParents.Repository");
 const ScheduleChildrenRepository = require ("./models/ScheduleChildren.Repository");
 
@@ -17,7 +17,7 @@ const tables = {};
 tables.emergency = new EmergencyRepository();
 tables.parents = new ParentsRepository();
 tables.schedule = new ScheduleRepository();
-tables.children = new ChildrenRepository();
+tables.childrens = new ChildrensRepository();
 tables.childrensParents = new ChildrensParentsRepository();
 tables.scheduleChildren = new ScheduleChildrenRepository();
 

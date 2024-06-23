@@ -1,19 +1,19 @@
 const AbstractRepository = require("./AbstractRepository");
 
-class ChildrenRepository extends AbstractRepository {
+class ChildrensRepository extends AbstractRepository {
   constructor() {
     // Call the constructor of the parent class (AbstractRepository)
     // and pass the table name "children" as configuration
-    super({ table: "children" });
+    super({ table: "childrens" });
   }
 
   // The C of CRUD - Create operation
 
-  async create(children) {
+  async create(childrens) {
     // Execute the SQL INSERT query to add a new children to the "children" table
     const [result] = await this.database.query(
       `insert into ${this.table} (avatar, firstname, lastname, date_of_birth) values (?, ?, ?, ?)`,
-      [children.avatar, children.firstname, children.lastname, children.date_of_birth]
+      [childrens.avatar, childrens.firstname, childrens.lastname, childrens.date_of_birth]
     );
 
     // Return the ID of the newly inserted children
@@ -42,11 +42,11 @@ class ChildrenRepository extends AbstractRepository {
   }
 
   // The U of CRUD - Update operation
-  async update(children) {
+  async update(childrens) {
     // Execute the SQL UPDATE query to update a specific children
     const [result] = await this.database.query(
       `update ${this.table} set avatar = ?, firstname = ?, lastname = ?, date_of_birth = ? where id = ?`,
-      [children.avatar, children.firstname, children.lastname, children.date_of_birth, children.id]
+      [childrens.avatar, childrens.firstname, childrens.lastname, childrens.date_of_birth, childrens.id]
     );
 
     // Return how many rows were affected
@@ -66,4 +66,4 @@ class ChildrenRepository extends AbstractRepository {
   }
 }
 
-module.exports = ChildrenRepository;
+module.exports = ChildrensRepository;
