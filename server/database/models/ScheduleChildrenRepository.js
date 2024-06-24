@@ -13,7 +13,11 @@ class ScheduleChildrenRepository extends AbstractRepository {
     // Execute the SQL INSERT query to add a new scheduleChildren to the "scheduleChildren" table
     const [result] = await this.database.query(
       `insert into ${this.table} (child_id, schedule_id, date) values (?, ?)`,
-      [scheduleChildren.child_id, scheduleChildren.schedule_id, scheduleChildren.date]
+      [
+        scheduleChildren.child_id,
+        scheduleChildren.schedule_id,
+        scheduleChildren.date,
+      ]
     );
 
     // Return the ID of the newly inserted scheduleChildren
@@ -46,7 +50,12 @@ class ScheduleChildrenRepository extends AbstractRepository {
     // Execute the SQL UPDATE query to update a specific scheduleChildren
     const [result] = await this.database.query(
       `update ${this.table} set child_id = ?, schedule_id = ?, date = ? where id = ?`,
-      [scheduleChildren.child_id, scheduleChildren.schedule_id, scheduleChildren.date, scheduleChildren.id]
+      [
+        scheduleChildren.child_id,
+        scheduleChildren.schedule_id,
+        scheduleChildren.date,
+        scheduleChildren.id,
+      ]
     );
 
     // Return how many rows were affected

@@ -13,7 +13,13 @@ class ParentsRepository extends AbstractRepository {
     // Execute the SQL INSERT query to add a new parents to the "parents" table
     const [result] = await this.database.query(
       `insert into ${this.table} (firstname, lastname, adress, email, phoneNumber) values (?, ?, ?, ?, ?)`,
-      [parents.firstname, parents.lastname, parents.adress, parents.email, parents.phoneNumber]
+      [
+        parents.firstname,
+        parents.lastname,
+        parents.adress,
+        parents.email,
+        parents.phoneNumber,
+      ]
     );
 
     // Return the ID of the newly inserted parents
@@ -46,7 +52,14 @@ class ParentsRepository extends AbstractRepository {
     // Execute the SQL UPDATE query to update a specific parents
     const [result] = await this.database.query(
       `update ${this.table} set firstname = ?, lastname = ?, adress = ?, email = ?, phoneNumber = ? where id = ?`,
-      [parents.firstname, parents.lastname, parents.adress, parents.email, parents.phoneNumber, parents.id]
+      [
+        parents.firstname,
+        parents.lastname,
+        parents.adress,
+        parents.email,
+        parents.phoneNumber,
+        parents.id,
+      ]
     );
 
     // Return how many rows were affected

@@ -7,10 +7,7 @@ class ScheduleChildrenSeeder extends AbstractSeeder {
   }
 
   // The run method - Populate the 'Children' table with fake data
-
-  
-  }
-
+}
 
 // Export the UserSeeder class
 module.exports = ScheduleChildrenSeeder;

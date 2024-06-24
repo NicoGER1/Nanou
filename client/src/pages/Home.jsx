@@ -1,11 +1,10 @@
-
 import Avatar from "../components/Avatar";
+import Calendar from "../components/Calendar";
 
 function home() {
   return (
     <section className="homeComponent">
-      <h1>Calendar to be here</h1>
-
+      <Calendar />
       <Avatar />
     </section>
   );
