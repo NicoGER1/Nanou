@@ -1,6 +1,6 @@
 function Footer() {
   return (
-    <section className="FooterComponent">
+    <section className="footerComponent">
       <p>Footer Component</p>
     </section>
   );
