@@ -1,6 +1,6 @@
 const AbstractSeeder = require("./AbstractSeeder");
 
-class EmergencySeeder extends AbstractSeeder {
+class ScheduleChildrenSeeder extends AbstractSeeder {
   constructor() {
     // Call the constructor of the parent class (AbstractSeeder) with appropriate options
     super({ table: "childrens", truncate: true });
@@ -13,4 +13,4 @@ class EmergencySeeder extends AbstractSeeder {
 
 
 // Export the UserSeeder class
-module.exports = EmergencySeeder;
+module.exports = ScheduleChildrenSeeder;

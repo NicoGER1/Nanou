@@ -18,7 +18,6 @@ class ChildrensSeeder extends AbstractSeeder {
         aadress: this.faker.location.adress(),
         email: this.faker.internet.email(),
         phoneNumber: this.faker.phone.phoneNumber(),
-        // Generate a fake password using faker library
         refName: `user_${i}`, // Create a reference name for the children
       };
 
