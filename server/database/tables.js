@@ -1,7 +1,7 @@
 // Import the repository modules responsible for handling data operations on the tables
 const EmergencyRepository = require ("./models/EmergencyRepository");
 const ParentsRepository = require("./models/ParentsRepository");
-const ScheduleRepository = require ("./models/Schedule.Repository");
+const ScheduleRepository = require ("./models/ScheduleRepository");
 const ChildrensRepository = require ("./models/ChildrensRepository");
 const ChildrensParentsRepository = require ("./models/ChildrensParentsRepository");
 const ScheduleChildrenRepository = require ("./models/ScheduleChildrenRepository");
