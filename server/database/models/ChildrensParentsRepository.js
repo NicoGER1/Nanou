@@ -46,7 +46,11 @@ class ChildrensParentsRepository extends AbstractRepository {
     // Execute the SQL UPDATE query to update a specific childrensParents
     const [result] = await this.database.query(
       `update ${this.table} set child_id = ?, parent_id = ? where id = ?`,
-      [childrensParents.child_id, childrensParents.parent_id, childrensParents.id]
+      [
+        childrensParents.child_id,
+        childrensParents.parent_id,
+        childrensParents.id,
+      ]
     );
 
     // Return how many rows were affected

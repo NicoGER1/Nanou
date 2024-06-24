@@ -13,7 +13,12 @@ class ChildrensRepository extends AbstractRepository {
     // Execute the SQL INSERT query to add a new children to the "children" table
     const [result] = await this.database.query(
       `insert into ${this.table} (avatar, firstname, lastname, date_of_birth) values (?, ?, ?, ?)`,
-      [childrens.avatar, childrens.firstname, childrens.lastname, childrens.date_of_birth]
+      [
+        childrens.avatar,
+        childrens.firstname,
+        childrens.lastname,
+        childrens.date_of_birth,
+      ]
     );
 
     // Return the ID of the newly inserted children
@@ -46,7 +51,13 @@ class ChildrensRepository extends AbstractRepository {
     // Execute the SQL UPDATE query to update a specific children
     const [result] = await this.database.query(
       `update ${this.table} set avatar = ?, firstname = ?, lastname = ?, date_of_birth = ? where id = ?`,
-      [childrens.avatar, childrens.firstname, childrens.lastname, childrens.date_of_birth, childrens.id]
+      [
+        childrens.avatar,
+        childrens.firstname,
+        childrens.lastname,
+        childrens.date_of_birth,
+        childrens.id,
+      ]
     );
 
     // Return how many rows were affected

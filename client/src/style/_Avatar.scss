@@ -1,0 +1,19 @@
+.AvatarComponent {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.Avatar-Pic > img {
+  width: 6rem;
+  filter: drop-shadow(8px 5px 8px rgb(173, 171, 164));
+}
+.avatarName {
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  color: var(--primary-color-font);
+}
