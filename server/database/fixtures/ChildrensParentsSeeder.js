@@ -1,13 +1,30 @@
 const AbstractSeeder = require("./AbstractSeeder");
+const ChildrensSeeder = require("./ChildrensSeeder");
+const ParentsSeeder = require("./ParentsSeeder");
 
 class ChildrensParentsSeeder extends AbstractSeeder {
   constructor() {
-    // Call the constructor of the parent class (AbstractSeeder) with appropriate options
-    super({ table: "childrens", truncate: true });
+    super({
+      table: "childrens_parents",
+      truncate: true,
+      dependencies: [ChildrensSeeder, ParentsSeeder],
+    });
+    this.relations = ["father", "mother", "guardian", "grandparent"];
   }
 
-  // The run method - Populate the 'Children' table with fake data
+  run() {
+    for (let i = 0; i < 5; i += 1) {
+      const fakeRelation = {
+        child_ID: this.getRef(`childrens_${Math.floor(Math.random() * 5)}`)
+          .insertId,
+        parent_ID: this.getRef(`parents_${Math.floor(Math.random() * 5)}`)
+          .insertId,
+        relation: this.faker.helpers.arrayElement(this.relations),
+      };
+      this.insert(fakeRelation);
+    }
+    return Promise.all(this.promises);
+  }
 }
 
-// Export the UserSeeder class
 module.exports = ChildrensParentsSeeder;

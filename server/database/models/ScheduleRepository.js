@@ -12,8 +12,8 @@ class ScheduleRepository extends AbstractRepository {
   async create(schedule) {
     // Execute the SQL INSERT query to add a new schedule to the "schedule" table
     const [result] = await this.database.query(
-      `insert into ${this.table} (end_hour, start_hour values (?, ?)`,
-      [schedule.end_hour, schedule.start_hour]
+      `insert into ${this.table} (title, end_hour, start_hour) values (?, ?, ?)`,
+      [schedule.title, schedule.end_hour, schedule.start_hour]
     );
 
     // Return the ID of the newly inserted schedule
@@ -45,8 +45,8 @@ class ScheduleRepository extends AbstractRepository {
   async update(schedule) {
     // Execute the SQL UPDATE query to update a specific schedule
     const [result] = await this.database.query(
-      `update ${this.table} set end_hour = ?, start_hour = ? where id = ?`,
-      [schedule.end_hour, schedule.start_hour, schedule.id]
+      `update ${this.table} set title = ?, end_hour = ?, start_hour = ? where id = ?`,
+      [schedule.title, schedule.end_hour, schedule.start_hour, schedule.id]
     );
 
     // Return how many rows were affected

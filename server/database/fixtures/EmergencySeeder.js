@@ -2,12 +2,19 @@ const AbstractSeeder = require("./AbstractSeeder");
 
 class EmergencySeeder extends AbstractSeeder {
   constructor() {
-    // Call the constructor of the parent class (AbstractSeeder) with appropriate options
-    super({ table: "childrens", truncate: true });
+    super({ table: "emergency", truncate: true });
   }
 
-  // The run method - Populate the 'Children' table with fake data
+  run() {
+    for (let i = 0; i < 10; i += 1) {
+      const fakeEmergency = {
+        name: this.faker.company.name(),
+        number: this.faker.phone.number(),
+      };
+
+      this.insert(fakeEmergency);
+    }
+  }
 }
 
-// Export the UserSeeder class
 module.exports = EmergencySeeder;
