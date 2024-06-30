@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction";
 import Modal from "react-modal";
+import axios from "axios";
 
 Modal.setAppElement("#root");
 
@@ -12,16 +13,30 @@ function CalendarComponent() {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [currentEvent, setCurrentEvent] = useState(null);
   const [title, setTitle] = useState("");
-  const [startTime, setStartTime] = useState(""); // Add start time state
-  const [endTime, setEndTime] = useState(""); // Add end time state
-  const [allDay, setAllDay] = useState(false); // Add all day state
+  const [startTime, setStartTime] = useState("");
+  const [endTime, setEndTime] = useState("");
+  const [allDay, setAllDay] = useState(false);
+
+  const fetchEvents = () => {
+    axios
+      .get(`${import.meta.env.VITE_API_URL}/api/schedule`)
+      .then((response) => {
+        setEvents(response.data);
+      })
+      .catch((error) => {
+        console.error("Error fetching events:", error);
+      });
+  };
+  useEffect(() => {
+    fetchEvents();
+  }, []);
 
   const openModal = (event) => {
-    setCurrentEvent(event);
+    setCurrentEvent(event || null);
     setTitle(event ? event.title : "");
-    setStartTime(event ? event.startStr : ""); // Set start time
-    setEndTime(event ? event.endStr : ""); // Set end time
-    setAllDay(event ? event.allDay : false); // Set all day
+    setStartTime(event ? event.startStr : "");
+    setEndTime(event ? event.endStr : "");
+    setAllDay(event ? event.allDay : false);
     setModalIsOpen(true);
   };
 
@@ -29,27 +44,40 @@ function CalendarComponent() {
     setModalIsOpen(false);
     setCurrentEvent(null);
     setTitle("");
-    setStartTime(""); // Reset start time
-    setEndTime(""); // Reset end time
-    setAllDay(false); // Reset all day
+    setStartTime("");
+    setEndTime("");
+    setAllDay(false);
   };
 
   const handleDateClick = (info) => {
-    openModal({ start: info.dateStr, end: info.dateStr }); // Pass start and end dates with time
+    openModal({ start: info.dateStr, end: info.dateStr });
   };
 
   const handleEventDrop = (info) => {
-    const updatedEvents = events.map((event) => {
-      if (event.id === info.event.id) {
-        return {
-          ...event,
-          start: info.event.startStr,
-          end: info.event.endStr,
-        };
-      }
-      return event;
-    });
-    setEvents(updatedEvents);
+    const { event } = info;
+    const updatedEvent = {
+      id: event.id,
+      start_hour: event.startStr,
+      end_hour: event.endStr,
+    };
+
+    axios
+      .put(
+        `${import.meta.env.VITE_API_URL}/api/schedule/${event.id}`,
+        updatedEvent
+      )
+      .then((response) => {
+        console.info("Event updated successfully:", response.data);
+        // Update events in state
+        setEvents((prevEvents) =>
+          prevEvents.map((e) =>
+            e.id === event.id ? { ...e, ...updatedEvent } : e
+          )
+        );
+      })
+      .catch((error) => {
+        console.error("Error updating event:", error);
+      });
   };
 
   const handleEventClick = (info) => {
@@ -57,36 +85,54 @@ function CalendarComponent() {
   };
 
   const handleSubmit = () => {
-    if (currentEvent.id) {
-      const updatedEvents = events.map((event) => {
-        if (event.id === currentEvent.id) {
-          return {
-            ...event,
-            title,
-            start: allDay
-              ? currentEvent.startStr
-              : `${currentEvent.startStr}T${startTime}`,
-            end: allDay
-              ? currentEvent.startStr
-              : `${currentEvent.startStr}T${endTime}`,
-            allDay,
-          };
-        }
-        return event;
-      });
-      setEvents(updatedEvents);
-    } else {
-      const newEvent = {
-        id: String(events.length + 1),
+    if (currentEvent && currentEvent.id) {
+      // Update existing event
+      const updatedEvent = {
+        id: currentEvent.id,
         title,
-        start: allDay
-          ? currentEvent.start
-          : `${currentEvent.start}T${startTime}`,
-        end: allDay ? currentEvent.start : `${currentEvent.start}T${endTime}`,
-        allDay,
+        all_day: allDay,
+        start_hour: allDay ? null : startTime,
+        end_hour: allDay ? null : endTime,
       };
-      setEvents([...events, newEvent]);
+
+      axios
+        .put(
+          `${import.meta.env.VITE_API_URL}/api/schedule/${currentEvent.id}`,
+          updatedEvent
+        )
+        .then((response) => {
+          console.info("Event updated successfully:", response.data);
+          // Update events in state
+          setEvents((prevEvents) =>
+            prevEvents.map((e) =>
+              e.id === currentEvent.id ? { ...e, ...updatedEvent } : e
+            )
+          );
+        })
+        .catch((error) => {
+          console.error("Error updating event:", error);
+        });
+    } else {
+      // Create new event
+      const newEvent = {
+        title,
+        all_day: allDay,
+        start_hour: allDay ? null : startTime,
+        end_hour: allDay ? null : endTime,
+      };
+
+      axios
+        .post(`${import.meta.env.VITE_API_URL}/api/schedule`, newEvent)
+        .then((response) => {
+          console.info("Event created successfully:", response.data);
+          // Add new event to events state
+          setEvents((prevEvents) => [...prevEvents, response.data]);
+        })
+        .catch((error) => {
+          console.error("Error creating event:", error);
+        });
     }
+
     closeModal();
   };
 
@@ -97,6 +143,7 @@ function CalendarComponent() {
         initialView="dayGridMonth"
         headerToolbar={{
           left: "title",
+          center: "",
           right: "dayGridMonth,timeGridWeek,timeGridDay today prev,next",
         }}
         events={events}
@@ -106,6 +153,7 @@ function CalendarComponent() {
         eventDrop={handleEventDrop}
         eventClick={handleEventClick}
       />
+
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}

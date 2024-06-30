@@ -26,9 +26,6 @@ const ChildrensParentsRouter = require("./childrens_parents/ChildrensParentsRout
 
 router.use("/childrens_parents", ChildrensParentsRouter);
 
-const ScheduleChildrenRouter = require("./schedule_children/ScheduleChildrenRouter");
-
-router.use("/schedule_children", ScheduleChildrenRouter);
 
 /* ************************************************************************* */
 

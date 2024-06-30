@@ -12,12 +12,13 @@ class ChildrensRepository extends AbstractRepository {
   async create(childrens) {
     // Execute the SQL INSERT query to add a new children to the "children" table
     const [result] = await this.database.query(
-      `insert into ${this.table} (avatar, firstname, lastname, date_of_birth) values (?, ?, ?, ?)`,
+      `insert into ${this.table} (avatar, firstname, lastname, date_of_birth, alimentation) values (?, ?, ?, ?, ?)`,
       [
         childrens.avatar,
         childrens.firstname,
         childrens.lastname,
         childrens.date_of_birth,
+        childrens.alimentation,
       ]
     );
 
@@ -50,12 +51,13 @@ class ChildrensRepository extends AbstractRepository {
   async update(childrens) {
     // Execute the SQL UPDATE query to update a specific children
     const [result] = await this.database.query(
-      `update ${this.table} set avatar = ?, firstname = ?, lastname = ?, date_of_birth = ? where id = ?`,
+      `update ${this.table} set avatar = ?, firstname = ?, lastname = ?, date_of_birth = ?, alimentation = ?, where id = ?`,
       [
         childrens.avatar,
         childrens.firstname,
         childrens.lastname,
         childrens.date_of_birth,
+        childrens.alimentation,
         childrens.id,
       ]
     );

@@ -16,8 +16,11 @@ CREATE TABLE parents (
 CREATE TABLE schedule (
     ID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(80) NOT NULL,
-    end_hour TIME NOT NULL,
-    start_hour TIME NOT NULL
+    end_hour TIME  NULL,
+    start_hour TIME NULL,
+    start_date DATE NULL,
+    end_date DATE NULL,
+    all_day BOOLEAN NULL DEFAULT FALSE
   );  
 
 CREATE TABLE childrens (
@@ -25,7 +28,8 @@ CREATE TABLE childrens (
     avatar VARCHAR(255),
     firstname VARCHAR(80) NOT NULL,
     lastname VARCHAR(80) NOT NULL,
-    date_of_birth DATE
+    date_of_birth DATE,
+    alimentation VARCHAR(80) NOT NULL
 );
 
 CREATE TABLE childrens_parents (
@@ -36,3 +40,4 @@ CREATE TABLE childrens_parents (
     FOREIGN KEY (child_ID) REFERENCES Childrens(ID),
     FOREIGN KEY (parent_ID) REFERENCES Parents(ID)
 );
+
