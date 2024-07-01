@@ -13,16 +13,6 @@ CREATE TABLE parents (
     phoneNumber VARCHAR(30) NOT NULL
 );
 
-CREATE TABLE schedule (
-    ID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    title VARCHAR(80) NOT NULL,
-    end_hour TIME  NULL,
-    start_hour TIME NULL,
-    start_date DATE NULL,
-    end_date DATE NULL,
-    all_day BOOLEAN NULL DEFAULT FALSE
-  );  
-
 CREATE TABLE childrens (
     ID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     avatar VARCHAR(255),
@@ -30,6 +20,14 @@ CREATE TABLE childrens (
     lastname VARCHAR(80) NOT NULL,
     date_of_birth DATE,
     alimentation VARCHAR(80) NOT NULL
+);
+
+CREATE TABLE events (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  title VARCHAR(255) NOT NULL,
+  start DATETIME NULL,
+  end DATETIME NULL,
+  allDay BOOLEAN DEFAULT FALSE
 );
 
 CREATE TABLE childrens_parents (

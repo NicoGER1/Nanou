@@ -10,10 +10,6 @@ const EmergencyRouter = require("./emergency/EmergencyRouter");
 
 router.use("/emergency", EmergencyRouter);
 
-const ScheduleRouter = require("./schedule/ScheduleRouter");
-
-router.use("/schedule", ScheduleRouter);
-
 const ParentsRouter = require("./parents/ParentsRouter");
 
 router.use("/parents", ParentsRouter);
@@ -22,10 +18,13 @@ const ChildrensRouter = require("./childrens/ChildrensRouter");
 
 router.use("/childrens", ChildrensRouter);
 
+const EventsRouter = require("./events/EventsRouter");
+
+router.use("/events", EventsRouter);
+
 const ChildrensParentsRouter = require("./childrens_parents/ChildrensParentsRouter");
 
 router.use("/childrens_parents", ChildrensParentsRouter);
-
 
 /* ************************************************************************* */
 
