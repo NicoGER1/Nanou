@@ -1,110 +1,20 @@
-// Mobile-first styles
+/* CalendarStyles.css */
 .calendar-container {
-  width: 100%;
-  height: 80%;
-  padding: 10px;
-  box-sizing: border-box;
+  padding: 1rem;
 }
 
-.fc-header-toolbar {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 10px;
-
-  .fc-toolbar-chunk {
-    margin: 5px 0;
-  }
-
-  .fc-button {
-    font-size: 0.8rem;
-    padding: 5px 10px;
-  }
-
-  .fc-toolbar-title {
-    font-size: 1.5rem;
-  }
+.rbc-toolbar-label {
+  font-size: 1.5rem;
 }
 
-.fc .fc-daygrid-day-number {
-  font-size: 0.8rem;
+.rbc-event.rbc-selected,
+.rbc-day-slot .rbc-selected.rbc-background-event {
+  background-color: #268539;
 }
 
-.fc-event-title {
-  font-size: 0.75rem;
-}
-
-// Adjust row height
-.fc .fc-timegrid {
-  height: 120%;
-}
-.fc .fc-daygrid {
-  height: 120%;
-}
-
-.modal {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: white;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  width: 90%;
-  max-width: 400px;
-}
-
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 1000;
-}
-
-// Desktop styles
-@media (min-width: 768px) {
+@media (min-width: 770px) {
   .calendar-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-
-  .fc-header-toolbar {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-
-    .fc-toolbar-chunk {
-      margin: 0 10px;
-    }
-
-    .fc-button {
-      font-size: 1rem;
-      padding: 10px 15px;
-    }
-
-    .fc-toolbar-title {
-      font-size: 1.5rem;
-    }
-  }
-
-  .fc .fc-daygrid-day-number,
-  .fc-event-title {
-    font-size: 1rem;
-  }
-
-  .modal {
-    width: 70%;
-    max-width: 500px;
-  }
-  .fc .fc-timegrid {
-    height: 100%;
-  }
-  .fc .fc-timegrid {
-    height: 100%;
+    width: 60%;
+    margin-top: 6rem;
   }
 }

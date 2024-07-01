@@ -46,11 +46,42 @@
   }
 }
 
-.navbarDrawer {
-  display: none;
-}
-
 .navbarLogo > img {
   width: 5.5rem;
   filter: drop-shadow(8px 5px 8px rgb(173, 171, 164));
+}
+
+@media (max-width: 770px) {
+  .navbarDrawer {
+    display: none;
+  }
+}
+
+@media (min-width: 770px) {
+  .navbar-logo-container {
+    display: none;
+  }
+  .navbar-desktop {
+    .navbarTop {
+      display: flex;
+      justify-content: space-between;
+
+      .navbarDrawer {
+        img {
+          display: block;
+          width: 65px;
+        }
+      }
+
+      .navbarLogo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex: 1;
+        img {
+          display: block;
+        }
+      }
+    }
+  }
 }

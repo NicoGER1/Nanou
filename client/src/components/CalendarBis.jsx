@@ -14,14 +14,16 @@ function CalendarBis() {
 
   const fetchEvents = async () => {
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/events`);
+      const response = await fetch(
+        `${import.meta.env.VITE_API_URL}/api/events`
+      );
       const data = await response.json();
-      
+
       // Formater les dates à l'aide de moment.js
-      const formattedEvents = data.map(event => ({
+      const formattedEvents = data.map((event) => ({
         ...event,
         start: new Date(event.start), // Convertit en objet Date
-        end: new Date(event.end) // Convertit en objet Date
+        end: new Date(event.end), // Convertit en objet Date
       }));
 
       setEvents(formattedEvents);
@@ -47,11 +49,14 @@ function CalendarBis() {
 
   const handleAddEvent = async (event) => {
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/events`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(event),
-      });
+      const response = await fetch(
+        `${import.meta.env.VITE_API_URL}/api/events`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(event),
+        }
+      );
       if (response.ok) {
         fetchEvents();
       } else {
@@ -64,11 +69,14 @@ function CalendarBis() {
 
   const handleUpdateEvent = async (event) => {
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/events/${event.id}`, {
-        method: "PUT",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(event),
-      });
+      const response = await fetch(
+        `${import.meta.env.VITE_API_URL}/api/events/${event.id}`,
+        {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(event),
+        }
+      );
       if (response.ok) {
         fetchEvents();
       } else {
@@ -81,9 +89,12 @@ function CalendarBis() {
 
   const handleDeleteEvent = async (event) => {
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/events/${event.id}`, {
-        method: "DELETE",
-      });
+      const response = await fetch(
+        `${import.meta.env.VITE_API_URL}/api/events/${event.id}`,
+        {
+          method: "DELETE",
+        }
+      );
       if (response.ok) {
         fetchEvents();
       } else {
@@ -95,7 +106,7 @@ function CalendarBis() {
   };
 
   return (
-    <div>
+    <div className="calendar-container">
       <Calendar
         localizer={localizer}
         events={events}
@@ -113,8 +124,16 @@ function CalendarBis() {
           onSubmit={handleAddEvent}
           onUpdate={handleUpdateEvent}
           onDelete={handleDeleteEvent}
-          defaultStart={selectedSlot ? moment(selectedSlot.start).format("YYYY-MM-DDTHH:mm") : ""}
-          defaultEnd={selectedSlot ? moment(selectedSlot.end).format("YYYY-MM-DDTHH:mm") : ""}
+          defaultStart={
+            selectedSlot
+              ? moment(selectedSlot.start).format("YYYY-MM-DDTHH:mm")
+              : ""
+          }
+          defaultEnd={
+            selectedSlot
+              ? moment(selectedSlot.end).format("YYYY-MM-DDTHH:mm")
+              : ""
+          }
           selectedEvent={selectedEvent}
         />
       )}
