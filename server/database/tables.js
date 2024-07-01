@@ -1,10 +1,9 @@
 // Import the repository modules responsible for handling data operations on the tables
 const EmergencyRepository = require("./models/EmergencyRepository");
 const ParentsRepository = require("./models/ParentsRepository");
-const ScheduleRepository = require("./models/ScheduleRepository");
 const ChildrensRepository = require("./models/ChildrensRepository");
 const ChildrensParentsRepository = require("./models/ChildrensParentsRepository");
-const ScheduleChildrenRepository = require("./models/ScheduleChildrenRepository");
+const EventsRepository = require("./models/EventsRepository");
 
 // Create an empty object to hold data repositories for different tables
 const tables = {};
@@ -16,10 +15,9 @@ const tables = {};
 // Register each repository as data access point for its table
 tables.emergency = new EmergencyRepository();
 tables.parents = new ParentsRepository();
-tables.schedule = new ScheduleRepository();
 tables.childrens = new ChildrensRepository();
+tables.events = new EventsRepository();
 tables.childrensParents = new ChildrensParentsRepository();
-tables.scheduleChildren = new ScheduleChildrenRepository();
 
 /* ************************************************************************* */
 

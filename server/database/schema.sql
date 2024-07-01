@@ -1,7 +1,7 @@
 CREATE TABLE emergency (
     ID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(80) NOT NULL,
-    number VARCHAR(20) NOT NULL
+    number VARCHAR(30) NOT NULL
 );
 
 CREATE TABLE parents (
@@ -10,21 +10,24 @@ CREATE TABLE parents (
     lastname VARCHAR(80) NOT NULL,
     address VARCHAR(255),
     email VARCHAR(80) NOT NULL UNIQUE,
-    phoneNumber VARCHAR(20) NOT NULL
+    phoneNumber VARCHAR(30) NOT NULL
 );
-
-CREATE TABLE schedule (
-    ID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    end_hour TIME NOT NULL,
-    start_hour TIME NOT NULL
-  );  
 
 CREATE TABLE childrens (
     ID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     avatar VARCHAR(255),
     firstname VARCHAR(80) NOT NULL,
     lastname VARCHAR(80) NOT NULL,
-    date_of_birth DATE
+    date_of_birth DATE,
+    alimentation VARCHAR(80) NOT NULL
+);
+
+CREATE TABLE events (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  title VARCHAR(255) NOT NULL,
+  start DATETIME NULL,
+  end DATETIME NULL,
+  allDay BOOLEAN DEFAULT FALSE
 );
 
 CREATE TABLE childrens_parents (
@@ -36,11 +39,3 @@ CREATE TABLE childrens_parents (
     FOREIGN KEY (parent_ID) REFERENCES Parents(ID)
 );
 
-CREATE TABLE schedule_children (
-	  ID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-	  child_ID INT NOT NULL,
-	  schedule_ID INT NOT NULL,
-    FOREIGN KEY (child_ID) REFERENCES Childrens(ID),
-    FOREIGN KEY (schedule_ID) REFERENCES schedule(ID),
-    Date DATE NOT NULL
-);

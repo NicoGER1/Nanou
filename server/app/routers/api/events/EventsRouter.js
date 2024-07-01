@@ -6,29 +6,29 @@ const router = express.Router();
 // Define Your API Routes Here
 /* ************************************************************************* */
 
-// Import item-related actions
+// Import events-related actions
 const {
   browse,
   read,
   edit,
   add,
   destroy,
-} = require("../../../controllers/scheduleChildrenAction");
+} = require("../../../controllers/eventsAction");
 
-// Route to get a list of items
+// Route to get a list of events
 router.get("/", browse);
 
-// Route to get a specific item by ID
+// Route to get a specific events by ID
 router.get("/:id", read);
 
-// Route to edit a new item
-router.put("/", edit);
+// Route to edit a new events
+router.put("/:id", edit);
 
-// Route to add a new item
+// Route to add a new events
 router.post("/", add);
 
-// Route to delete an item
-router.delete("/", destroy);
+// Route to delete an events
+router.delete("/:id", destroy);
 
 /* ************************************************************************* */
 
