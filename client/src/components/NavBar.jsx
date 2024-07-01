@@ -1,11 +1,15 @@
+import * as React from "react";
+
 import { NavLink } from "react-router-dom";
 
+import { StyledEngineProvider } from "@mui/material/styles";
 import calendar from "../assets/images/calend_icon.png";
 import child from "../assets/images/child_icon.png";
 import parents from "../assets/images/parent_icon.png";
 import infos from "../assets/images/info_icon.png";
 import logo from "../assets/images/logo.png";
-import menu from "../assets/images/menu.png";
+
+import Drawer from "./Drawer";
 
 function NavBar() {
   return (
@@ -47,7 +51,11 @@ function NavBar() {
       <section className="navbar-desktop">
         <nav className="navbarTop">
           <li className="navbarDrawer">
-            <img src={menu} alt="bouton de menu" />
+            <React.StrictMode>
+              <StyledEngineProvider injectFirst>
+                <Drawer />
+              </StyledEngineProvider>
+            </React.StrictMode>
           </li>
           <li className="navbarLogo">
             <img src={logo} alt="logo du site" />
