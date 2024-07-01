@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Modal from "react-modal";
 import PropTypes from "prop-types";
+import moment from "moment";
 
 Modal.setAppElement("#root");
 
@@ -84,7 +85,7 @@ function EventModal({
             <input
               id="event-start"
               type="datetime-local"
-              value={start}
+              value={moment(start).format("YYYY-MM-DDTHH:mm")}
               onChange={(e) => setStart(e.target.value)}
               required
               disabled={allDay}
@@ -96,7 +97,7 @@ function EventModal({
             <input
               id="event-end"
               type="datetime-local"
-              value={end}
+              value={moment(end).format("YYYY-MM-DDTHH:mm")}
               onChange={(e) => setEnd(e.target.value)}
               required
               disabled={allDay}
