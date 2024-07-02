@@ -6,7 +6,7 @@ class ParentsSeeder extends AbstractSeeder {
   }
 
   run() {
-    for (let i = 0; i < 5; i += 1) {
+    for (let i = 0; i < 4; i += 1) {
       const fakeParent = {
         firstname: this.faker.person.firstName(),
         lastname: this.faker.person.lastName(),

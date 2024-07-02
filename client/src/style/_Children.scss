@@ -1,0 +1,97 @@
+.ChildrenComponent {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4rem;
+  padding: 0.8rem;
+}
+.child-info {
+  background-color: var(--input-background-color);
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 0.7rem;
+  width: 100%;
+}
+
+.child-title {
+  align-self: center;
+}
+p {
+  margin: 1.5rem 0 1.5rem 0;
+}
+
+span {
+  font-weight: 600;
+}
+
+.para-child {
+  padding-left: 1rem;
+}
+
+.children-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 3rem;
+}
+.child-bubble {
+  width: 5rem;
+  border: none;
+  background: none;
+  padding: 0;
+}
+
+.child-bubble > img {
+  width: 5rem;
+  filter: drop-shadow(8px 5px 8px rgb(173, 171, 164));
+}
+.child-name {
+  margin-top: -0.1rem;
+  color: var(--primary-color-font);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+@media (max-width: 770px) {
+  .play-pic > img {
+    display: none;
+  }
+}
+
+@media (min-width: 770px) {
+  .ChildrenComponent {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 6rem;
+  }
+  .children-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 0;
+    margin-right: 4rem;
+  }
+  .child-info {
+    width: 60%;
+    padding: 2rem;
+  }
+  .play-pic > img {
+    width: 20rem;
+  }
+  .para-child {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+}
