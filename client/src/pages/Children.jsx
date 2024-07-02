@@ -76,7 +76,7 @@ function Children() {
         {children.map((child) => (
           <button
             type="button"
-            key={child.id}
+            key={child.ID}
             className="child-bubble"
             onClick={() => handleChildClick(child)}
           >

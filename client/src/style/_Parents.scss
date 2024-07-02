@@ -1,4 +1,4 @@
-.ChildrenComponent {
+.ParentsComponent {
   display: flex;
   flex-direction: column-reverse;
   justify-content: center;
@@ -6,7 +6,8 @@
   margin-top: 4rem;
   padding: 0.8rem;
 }
-.child-info {
+
+.parent-info {
   background-color: var(--input-background-color);
   border-radius: 15px;
   display: flex;
@@ -16,30 +17,30 @@
   width: 100%;
 }
 
-.child-title {
+.parent-title {
   align-self: center;
 }
-p {
+.para-parent {
+  padding-left: 1rem;
+}
+.parent-info p {
   margin: 1.5rem 0 1.5rem 0;
 }
 
-span {
+.parent-info span {
   font-weight: 600;
 }
 
-.para-child {
-  padding-left: 1rem;
-}
-
-.children-list {
+.children-parent-list {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
   gap: 0.8rem;
-  margin-top: 3rem;
+  margin-top: 6rem;
 }
+
 .child-bubble {
   width: 5rem;
   border: none;
@@ -55,6 +56,7 @@ span {
 .child-bubble:hover img {
   filter: brightness(1.1);
 }
+
 .child-name {
   margin-top: -0.1rem;
   color: var(--primary-color-font);
@@ -63,20 +65,20 @@ span {
 }
 
 @media (max-width: 770px) {
-  .play-pic > img {
+  .parent-pic > img {
     display: none;
   }
 }
 
 @media (min-width: 770px) {
-  .ChildrenComponent {
+  .ParentsComponent {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     margin-top: 6rem;
   }
-  .children-list {
+  .children-parent-list {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -85,14 +87,14 @@ span {
     margin-top: 0;
     margin-right: 4rem;
   }
-  .child-info {
+  .parent-info {
     width: 60%;
     padding: 2rem;
   }
-  .play-pic > img {
+  .parent-pic > img {
     width: 20rem;
   }
-  .para-child {
+  .para-parent {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
