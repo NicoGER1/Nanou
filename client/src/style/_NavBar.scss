@@ -72,6 +72,9 @@
           width: 65px;
         }
       }
+      .navbarDrawer:hover img {
+        filter: brightness(1.1);
+      }
 
       .navbarLogo {
         display: flex;

@@ -40,7 +40,7 @@ function Emergency() {
         <ul className="list">
           {emergencyServices.map((service) => (
             <li key={service.ID} className="list-item">
-              {service.name}: <span className="number">{service.number}</span>
+              {service.name} <span className="number-info">{service.number}</span>
             </li>
           ))}
         </ul>
@@ -50,7 +50,7 @@ function Emergency() {
         <ul className="list">
           {poisonServices.map((service) => (
             <li key={service.ID} className="list-item">
-              {service.name}: <span className="number">{service.number}</span>
+              {service.name} <span className="number-info">{service.number}</span>
             </li>
           ))}
         </ul>

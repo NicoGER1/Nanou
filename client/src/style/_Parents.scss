@@ -65,7 +65,7 @@
 }
 
 @media (max-width: 770px) {
-  .play-pic > img {
+  .parent-pic > img {
     display: none;
   }
 }
@@ -78,7 +78,7 @@
     align-items: center;
     margin-top: 6rem;
   }
-  .children-list {
+  .children-parent-list {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -91,7 +91,13 @@
     width: 60%;
     padding: 2rem;
   }
-  .play-pic > img {
+  .parent-pic > img {
     width: 20rem;
+  }
+  .para-parent {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
   }
 }

@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 
+import parentChild from "../assets/images/parent-pic.png";
+
 function Parents() {
   const [children, setChildren] = useState([]);
   const [selectedParent, setSelectedParent] = useState(null);
@@ -41,6 +43,7 @@ function Parents() {
       <div className="parent-info">
         <h2 className="parent-title">Informations du parent</h2>
         <div className="para-parent">
+          <div>
           <p>
             <span>Prénom:</span> {selectedParent.firstname}
           </p>
@@ -56,6 +59,10 @@ function Parents() {
           <p>
             <span>Numéro de téléphone:</span> {selectedParent.phoneNumber}
           </p>
+          </div>
+          <div className="parent-pic">
+            <img src={parentChild} alt="parent with child" />
+          </div>
         </div>
       </div>
     );
