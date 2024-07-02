@@ -4,6 +4,7 @@ const ParentsRepository = require("./models/ParentsRepository");
 const ChildrensRepository = require("./models/ChildrensRepository");
 const ChildrensParentsRepository = require("./models/ChildrensParentsRepository");
 const EventsRepository = require("./models/EventsRepository");
+const PoisonServiceRepository = require("./models/PoisonServiceRepository");
 
 // Create an empty object to hold data repositories for different tables
 const tables = {};
@@ -18,6 +19,7 @@ tables.parents = new ParentsRepository();
 tables.childrens = new ChildrensRepository();
 tables.events = new EventsRepository();
 tables.childrensParents = new ChildrensParentsRepository();
+tables.poisonService = new PoisonServiceRepository();
 
 /* ************************************************************************* */
 

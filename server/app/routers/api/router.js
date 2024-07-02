@@ -26,6 +26,10 @@ const ChildrensParentsRouter = require("./childrens_parents/ChildrensParentsRout
 
 router.use("/childrens_parents", ChildrensParentsRouter);
 
+const PoisonServiceRouter = require("./poison_service/PoisonServiceRouter");
+
+router.use("/poison_service", PoisonServiceRouter);
+
 /* ************************************************************************* */
 
 module.exports = router;

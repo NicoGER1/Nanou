@@ -13,11 +13,11 @@ class ChildrensParentsSeeder extends AbstractSeeder {
   }
 
   run() {
-    for (let i = 0; i < 5; i += 1) {
+    for (let i = 0; i < 4; i += 1) {
       const fakeRelation = {
-        child_ID: this.getRef(`childrens_${Math.floor(Math.random() * 5)}`)
+        child_ID: this.getRef(`childrens_${Math.floor(Math.random() * 4)}`)
           .insertId,
-        parent_ID: this.getRef(`parents_${Math.floor(Math.random() * 5)}`)
+        parent_ID: this.getRef(`parents_${Math.floor(Math.random() * 4)}`)
           .insertId,
         relation: this.faker.helpers.arrayElement(this.relations),
       };
