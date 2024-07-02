@@ -4,7 +4,7 @@ class ChildrensParentsRepository extends AbstractRepository {
   constructor() {
     // Call the constructor of the parent class (AbstractRepository)
     // and pass the table name "childrensParents" as configuration
-    super({ table: "children" });
+    super({ table: "childrens_parents" });
   }
 
   // The C of CRUD - Create operation
@@ -31,6 +31,20 @@ class ChildrensParentsRepository extends AbstractRepository {
 
     // Return the first row of the result, which represents the childrensParents
     return rows[0];
+  }
+
+  async readByChildrenId(childrenId) {
+    // Execute the SQL SELECT query to retrieve parent information by a specific child ID
+    const [rows] = await this.database.query(
+      `SELECT *
+       FROM  ${this.table} AS cp
+       INNER JOIN parents AS p ON cp.parent_ID = p.ID
+       WHERE cp.child_ID = ?`,
+      [childrenId]
+    );
+
+    // Return all rows of the result, which represent the parents
+    return rows;
   }
 
   async readAll() {

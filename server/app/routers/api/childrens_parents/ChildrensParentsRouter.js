@@ -10,6 +10,7 @@ const router = express.Router();
 const {
   browse,
   read,
+  readByChildrenId,
   edit,
   add,
   destroy,
@@ -20,6 +21,8 @@ router.get("/", browse);
 
 // Route to get a specific item by ID
 router.get("/:id", read);
+
+router.get("/child/:childrenId", readByChildrenId)
 
 // Route to edit a new item
 router.put("/", edit);
