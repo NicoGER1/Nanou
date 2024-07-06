@@ -38,7 +38,7 @@
   align-items: center;
   flex-wrap: wrap;
   gap: 0.8rem;
-  margin-top: 6rem;
+  margin-top: 5rem;
 }
 
 .child-bubble {
@@ -64,7 +64,7 @@
   font-weight: 600;
 }
 
-@media (max-width: 770px) {
+@media (max-width: 1000px) {
   .parent-pic > img {
     display: none;
   }
@@ -90,6 +90,7 @@
   .parent-info {
     width: 60%;
     padding: 2rem;
+    filter: drop-shadow(8px 5px 8px rgb(173, 171, 164));
   }
   .parent-pic > img {
     width: 20rem;

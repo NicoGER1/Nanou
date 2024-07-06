@@ -51,10 +51,10 @@ CREATE TABLE childrens_parents (
 
 INSERT INTO parents (firstname, lastname, address, email, phoneNumber)
 VALUES
-    ('Pierre', 'Dupont', '12 rue de la Paix', 'pierre.dupont@example.com', '06 12 34 56 78'),
-    ('Marie', 'Martin', '34 avenue de la République', 'arie.martin@example.com', '07 89 01 23 45'),
-    ('Jean', 'Lefebvre', '56 rue de la Liberté', 'jean.lefebvre@example.com', '06 54 32 10 98'),
-    ('Sophie', 'Garcia', '78 boulevard de la Nation', 'ophie.garcia@example.com', '07 65 43 21 09');
+    ('Pierre', 'Dupont', '12 rue de la Paix 01500 Lagnieu', 'pierre.dupont@example.com', '06 12 34 56 78'),
+    ('Marie', 'Martin', '34 avenue de la République 38390 Montalieu', 'arie.martin@example.com', '07 89 01 23 45'),
+    ('Jean', 'Lefebvre', '56 rue de la Liberté 01500 Lagnieu', 'jean.lefebvre@example.com', '06 54 32 10 98'),
+    ('Sophie', 'Garcia', '78 boulevard de la Nation 38390 Apprieu', 'ophie.garcia@example.com', '07 65 43 21 09');
     
   INSERT INTO childrens (avatar, firstname, lastname, gender, date_of_birth, alimentation, allergy, passy, milk)
 VALUES
