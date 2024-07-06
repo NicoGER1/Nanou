@@ -20,11 +20,11 @@
 
 ## 💻 Aperçu de la version Desktop :
 
-<video src="./client//src/assets/ressources/desktop.gif" alt="video de la version desktop" width=500px/>
+<img src="./client//src/assets/ressources/desktop.gif" alt="video de la version desktop" width=500px/>
 
 ## 📱 Aperçu de la version mobile :
 
-<video src="./client//src/assets/ressources/mobile.gif" alt="video de la version mobile" width=500px/>
+<img src="./client//src/assets/ressources/mobile.gif" alt="video de la version mobile" width=500px/>
 
 ## 🛠️ Fonctionnalités :
 
