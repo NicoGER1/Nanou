@@ -20,11 +20,11 @@
 
 ## 💻 Aperçu de la version Desktop :
 
-<video src="./client//src/assets/ressources/desktop.webm" alt="video de la version desktop" width=180/>
+<video src="./client//src/assets/ressources/desktop.webm" alt="video de la version desktop" width=500px/>
 
 ## 📱 Aperçu de la version mobile :
 
-<video src="./client//src/assets/ressources/mobile.webm" alt="video de la version mobile" width=180/>
+<video src="./client//src/assets/ressources/mobile.webm" alt="video de la version mobile" width=500px/>
 
 ## 🛠️ Fonctionnalités :
 
