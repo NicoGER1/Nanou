@@ -24,7 +24,7 @@
 
 ## 📱 Aperçu de la version mobile :
 
-<img src="./client//src/assets/ressources/mobile.gif" alt="video de la version mobile" width=500px/>
+<img src="./client//src/assets/ressources/mobile.gif" alt="video de la version mobile" height=300px/>
 
 ## 🛠️ Fonctionnalités :
 
