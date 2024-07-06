@@ -1,87 +1,105 @@
-# .
+<p align="center">
+<img src="./client//src/assets/images/logo.png" alt="logo du site" height=200px>
+</p>
 
-This project uses Harmonia. Harmonia is a framework meant to serve as a foundation for every project following the React-Express-MySQL stack, as learned in Wild Code School.
-It's pre-configured with a set of tools which'll help students produce industry-quality and easier-to-maintain code, while staying a pedagogical tool.
+## 🚀 Bienvenue sur mon projet checkpoint 4 réalisé à la Wild Code School <br>
 
-## Setup & Use
+## 💥 Les compétences :
 
-**Windows users:** be sure to run these commands in a git terminal to avoid [issues with newline formats](https://en.wikipedia.org/wiki/Newline#Issues_with_different_newline_formats):
+### 🌞 Développer la partie front-end d'une application web ou web mobile sécurisée :
 
-```
-git config --global core.eol lf
-git config --global core.autocrlf false
-```
+- Maquetter des interfaces utilisateur web ou web mobile
+- Réaliser des interfaces utilisateur statiques web ou web mobile
+- Développer la partie dynamique des interfaces utilisateur web ou web mobile
 
-- In VSCode, install plugins **Prettier - Code formatter** and **ESLint** and configure them
-- Clone this repo, enter it
-- Run command `npm install`
-- Create environment files (`.env`) in both `server` and `client`: you can copy `.env.sample` files as starters (**don't** delete them)
+### 📈 Développer la partie back-end d'une application web ou web mobile sécurisée :
 
-### Available Commands
+- Mettre en place une base de données relationnelle
+- Développer des composants d'accès aux données SQL et NoSQL
+- Développer des composants métier coté serveur
 
-- `db:migrate` : Run the database migration script
-- `db:seed` : Run the database seed script
-- `dev` : Starts both servers (client + server) in one terminal
-- `dev:client` : Starts the React client
-- `dev:back` : Starts the Express server
-- `lint` : Runs validation tools (will be executed on every _commit_, and refuse unclean code)
+## 💻 Aperçu de la version Desktop :
 
-## FAQ
+<video src="./client//src/assets/ressources/desktop.webm" alt="video de la version desktop" width=180/>
 
-### Tools
+## 📱 Aperçu de la version mobile :
 
-- _Concurrently_ : Allows for several commands to run concurrently in the same CLI
-- _Husky_ : Allows to execute specific commands that trigger on _git_ events
-- _Vite_ : Alternative to _Create-React-App_, packaging less tools for a more fluid experience
-- _ESLint_ : "Quality of code" tool, ensures chosen rules will be enforced
-- _Prettier_ : "Quality of code" tool as well, focuses on the styleguide
-- _ Airbnb Standard_ : One of the most known "standards", even though it's not officially linked to ES/JS
+<video src="./client//src/assets/ressources/mobile.webm" alt="video de la version mobile" width=180/>
 
-## Deployment with Traefik
+## 🛠️ Fonctionnalités :
 
-> ⚠️ Prerequisites : You must have installed and configured Traefik on your VPS beforehand.
-> https://github.com/WildCodeSchool/vps-traefik-starter-kit/
+### 👥 Partie Utilisateur :
 
-For deployment, you have to go to `secrets` → app `actions` on the github repo to insert via `New repository secret` :
+- L'utilisateur peut créer, mettre à jour ou supprimer des évenement sur le calendrier.
+- L'utilsateur peux voir la liste des enfants avec les informations de chacun.
+- L'utilisateur peux voir les informations des parents relié aux enfants.
+- L'utilsateur a acces à tout les numéros d'urgences.
 
-- SSH_HOST : IP address of your VPS
-- SSH_USER : SSH login to your VPS
-- SSH_PASSWORD : SSH connection password to your VPS
+### 📝 Dans cette version :
 
-And a public variable from the tab `/settings/variables/actions` :
+- Les pages sont fonctionnels.
+- Les informations proviennent de la base de données.
+- Il est possible d'ajouter mettre à jour ou supprimer des évenement sur le calendrier.
+- le site est responsive.
 
-- PROJECT_NAME : the name of the project used to create the subdomain.
+### 🔜 A venir :
 
-> ⚠️ Warning : underscores are not allowed. They can cause trouble with the let's encrypt certificate
+- Créer une authentification.
+- Avoir la possibilité d'ajouter ou supprimer des enfants/parents/informations relative a ceci.
+- MAJ du calendrier en version française avec possibilité de personalisé les évenement par couleur.
 
-Use this same tab to add the other environment variables required for the project if any.
+## 📈 Statut du projet
 
-Only the server will be accessible. The root path `"/"` will redirect to the dist folder of your client. In order to allow that, please uncomment the line as explained in `server/src/app.js` (Line 102).
-Because the server will also serve the client, the global variable VITE_SERVER_URL will be set with an empty string.
+V1.0.0 Terminé
+V2.0.0 En développement
 
-Your url will be ` https://${PROJECT-NAME}.${subdomain}.wilders.dev/`.
+## Technos utilisé
 
-### About the database
+![HTML5](https://img.shields.io/badge/-HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![SASS](https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white)
+![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![React](https://img.shields.io/badge/-React-61DAFB?style=for-the-badge&logo=react&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)
+![MySQL](https://img.shields.io/badge/mysql-4479A1.svg?style=for-the-badge&logo=mysql&logoColor=white)
 
-The database is automaticaly deployed with the name of your repo. During the build of the projet (`docker-entry.sh`), the `node migrate.js` command is executed in the server. If you want to seed automaticaly your database using the `seed.js` script, replace the `cd ./server && node ./bin/migrate.js && node index.js` by `cd ./server && node ./bin/migrate.js && node ./bin/seed.js && node index.js`
+## 📊 Wireframe :
 
-### About public assets (pictures, fonts...)
+### 🖌️ Design du site sur Figma :
 
-Don't use any public folder on your client. This folder won't be accessible online. You may move your public assets in the `server/public` folder. Prefer [static assets](https://vitejs.dev/guide/assets) when possible.
+ <img src="./client//src/assets/ressources/wireframe.png" alt="screen wireframe">
 
-### About Specific Environment Variables (e.g., Email)
+## 💻 Modélisation de la base de données :
 
-Students should use the template provided in the `*.env.sample*` file as `<PROJECT_NAME><SPECIFIC_NAME>=<THE_VARIABLE>`.
+<img src="./client//src/assets/ressources/MPD.png" alt="screen base de données">
 
-> ⚠️ **Warning:** The `PROJECT_NAME` should match the one used in the Git public variable.
+## 🛠️ Setup & utilisation
 
-To add it during deployment, follow these 2 steps:
+### 📜 Commandes disponibles
 
-- Add the following variable to the `docker-compose.prod.yml` file (as shown in the example: `PROJECT_NAME_SPECIFIC_NAME: ${PROJECT_NAME_SPECIFIC_NAME}`).
-- Connect to your server via SSH. Open the global `.env` file in Traefik (`nano ./traefik/data/.env`). Add the variable with the correct value and save the file.
-- Afterward, you can initiate automatic deployment. Docker will not refresh during this process.
+- `npm i` : Initialisation du frontend et du backend, ainsi que de tous les outils
+- `npm run db:migrate` : Exécute le script de migration de la base de données
+- `npm run dev` : Démarre les deux serveurs (frontend + backend) dans un seul terminal
+- `npm run dev:client` : Démarre le serveur frontend React
+- `npm run dev:server` : Démarre le serveur backend Express
+- `lint` : Exécute les outils de validation et refuse le code non conforme (sera exécuté à chaque _commit_)
+- `fix` : Corrige les erreurs de linter (exécutez-le si `lint` grogne sur votre code !)
 
-### About Logs
+## 📄 Plus d'informations
 
-If you want to access the logs of your online projet (to follow the deployement or to watch any bug error), connect to your VPS (`ssh user@host`).
-Then, go on your specific project and run  `docker compose logs -t -f`.
+- Le modèle utilisé pour ce projet est un modèle de fondation Fullstack réalisé par la Wild Code School.
+
+- N'oubliez pas de créer vos fichiers .env pour le frontend et le backend en copiant les fichiers .env.sample de chaque répertoire.
+
+### 🔧 Outils utilisé :
+
+- _Concurrently_ : Permet de lancer plusieurs commandes simultanément dans la même interface de ligne de commande (CLI).
+- _Husky_ : Permet d'exécuter des commandes spécifiques déclenchées par des événements git.
+- _Vite_ : Alternative à Create-React-App, offrant moins d'outils pour une expérience plus fluide.
+- _ESLint_ : Outil de "qualité du code", garantit que les règles choisies seront appliquées.
+- _Prettier_ : Outil de "qualité du code" également, se concentre sur le guide de style.
+- _Airbnb Standard_ : L'un des "standards" les plus connus, bien qu'il ne soit pas officiellement lié à ES/JS.
+- _Nodemon_ : Permet de redémarrer le serveur à chaque mise à jour d'un fichier .js.
+
+### 👥 Créateur :
+
+[Nicolas GERIN](https://github.com/NicoGER1)
