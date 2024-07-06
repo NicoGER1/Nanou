@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+
+:root {
+  --primary-color: #fbecd4;
+  --secondary-color: #f8fafa;
+  --input-background-color: #d4f3edfc;
+  --text-background-color: #ee90a3;
+  --drawer-back-color: #f5af49;
+  --primary-color-font: black;
+  --secondary-color-font: white;
+  --text-shadow: 1px 1px 2px black;
+  --primary-font: "Rubik", sans-serif;
+  --modal-delete-button-color: #c82333;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--primary-font);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--primary-color-font);
+  margin: 0;
+}

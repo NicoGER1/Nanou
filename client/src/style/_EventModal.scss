@@ -1,0 +1,123 @@
+/* EventModal.scss */
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 600px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.modal-header {
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  text-align: center;
+  font-weight: bold;
+  color: #333;
+}
+
+.modal-form {
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.form-check {
+  display: flex;
+  align-items: center;
+}
+
+.form-check-input {
+  margin-right: 8px;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.modal-button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: white;
+  background-color: var(--drawer-back-color);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  margin-right: 10px;
+
+  &:hover {
+    background-color: var(--drawer-back-color);
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.2); /* Ajoute une légère ombre lorsque le bouton est en focus */
+  }
+
+  &:active {
+    transform: translateY(
+      1px
+    ); /* Ajoute un effet de pression lorsque le bouton est cliqué */
+  }
+}
+
+.modal-delete-button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: white;
+  background-color: var(--modal-delete-button-color);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: var(--modal-delete-button-color);
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.2);
+  }
+
+  &:active {
+    transform: translateY(1px);
+  }
+}

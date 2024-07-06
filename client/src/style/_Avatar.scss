@@ -1,0 +1,45 @@
+.Avatar-Pic > img {
+  width: 5rem;
+  filter: drop-shadow(8px 5px 8px rgb(173, 171, 164));
+}
+
+.Avatar-Pic:hover img {
+  filter: brightness(1.1);
+}
+.avatar-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.Avatar-Pic {
+  width: 5rem;
+  border: none;
+  background: none;
+  padding: 0;
+}
+.avatarName {
+  margin-top: -0.3rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  color: var(--primary-color-font);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+@media (min-width: 770px) {
+  .avatar-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 6rem;
+    margin-right: 4rem;
+  }
+}

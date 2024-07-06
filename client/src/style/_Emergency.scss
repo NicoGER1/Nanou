@@ -1,0 +1,67 @@
+.EmergencyComponent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0.6rem;
+  margin-bottom: 6rem;
+  padding: 0.8rem;
+  gap: 1rem;
+}
+
+.urgence,
+.poison {
+  background-color: var(--input-background-color);
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 0.7rem;
+  width: 100%;
+}
+
+.list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.list-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.number-info {
+  margin-right: 1rem;
+  background-color: var(--text-background-color);
+  padding: 0.2rem 1rem 0.2rem 1rem;
+  border-radius: 14px;
+  color: var(--secondary-color-font);
+}
+
+@media (min-width: 770px) {
+  .EmergencyComponent {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 6rem;
+    gap: 5rem;
+  }
+  .urgence,
+  .poison {
+    filter: drop-shadow(8px 5px 8px rgb(173, 171, 164));
+  }
+}
+@media (min-width: 1200px) {
+  .urgence,
+  .poison {
+    background-color: var(--input-background-color);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 0.7rem;
+    width: 30%;
+  }
+}

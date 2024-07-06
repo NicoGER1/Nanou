@@ -1,0 +1,20 @@
+/* CalendarStyles.css */
+.calendar-container {
+  padding: 1rem;
+}
+
+.rbc-toolbar-label {
+  font-size: 1.5rem;
+}
+
+.rbc-event.rbc-selected,
+.rbc-day-slot .rbc-selected.rbc-background-event {
+  background-color: #268539;
+}
+
+@media (min-width: 770px) {
+  .calendar-container {
+    width: 60%;
+    margin-top: 6rem;
+  }
+}

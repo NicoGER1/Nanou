@@ -6,9 +6,29 @@ const router = express.Router();
 // Import And Use Routers Here
 /* ************************************************************************* */
 
-const itemsRouter = require("./items/router");
+const EmergencyRouter = require("./emergency/EmergencyRouter");
 
-router.use("/items", itemsRouter);
+router.use("/emergency", EmergencyRouter);
+
+const ParentsRouter = require("./parents/ParentsRouter");
+
+router.use("/parents", ParentsRouter);
+
+const ChildrensRouter = require("./childrens/ChildrensRouter");
+
+router.use("/childrens", ChildrensRouter);
+
+const EventsRouter = require("./events/EventsRouter");
+
+router.use("/events", EventsRouter);
+
+const ChildrensParentsRouter = require("./childrens_parents/ChildrensParentsRouter");
+
+router.use("/childrens_parents", ChildrensParentsRouter);
+
+const PoisonServiceRouter = require("./poison_service/PoisonServiceRouter");
+
+router.use("/poison_service", PoisonServiceRouter);
 
 /* ************************************************************************* */
 
