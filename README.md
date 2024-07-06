@@ -32,23 +32,23 @@
 
 ### 👥 Partie Utilisateur :
 
-- L'utilisateur peut créer, mettre à jour ou supprimer des évenement sur le calendrier.
-- L'utilsateur peux voir la liste des enfants avec les informations de chacun.
-- L'utilisateur peux voir les informations des parents relié aux enfants.
-- L'utilsateur a acces à tout les numéros d'urgences.
+- L'utilisateur peut créer, mettre à jour ou supprimer des événements sur le calendrier.
+- L'utilisateur peut voir la liste des enfants avec les informations de chacun.
+- L'utilisateur peut voir les informations des parents reliés aux enfants.
+- L'utilisateur a accès à tous les numéros d'urgence.
 
 ### 📝 Dans cette version :
 
-- Les pages sont fonctionnels.
+- Les pages sont fonctionnelles.
 - Les informations proviennent de la base de données.
-- Il est possible d'ajouter mettre à jour ou supprimer des évenement sur le calendrier.
-- le site est responsive.
+- Il est possible d'ajouter, mettre à jour ou supprimer des événements sur le calendrier.
+- Le site est responsive.
 
 ### 🔜 A venir :
 
 - Créer une authentification.
-- Avoir la possibilité d'ajouter ou supprimer des enfants/parents/informations relative a ceci.
-- MAJ du calendrier en version française avec possibilité de personalisé les évenement par couleur.
+- Avoir la possibilité d'ajouter ou supprimer des enfants/parents/informations relatives à ceux-ci.
+- Mise à jour du calendrier en version française avec possibilité de personnaliser les événements par couleur.
 
 ## 📈 Statut du projet
 
