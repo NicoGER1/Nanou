@@ -57,20 +57,20 @@ function EventModal({
       isOpen={isOpen}
       onRequestClose={onRequestClose}
       shouldCloseOnOverlayClick
-      contentLabel={selectedEvent ? "Update Event" : "Add Event"}
+      contentLabel={selectedEvent ? "Mettre à jour" : "Ajouter un évenement"}
       className="modal-overlay"
       overlayClassName="modal-overlay"
     >
       <div className="modal-content">
         <button type="button" onClick={onRequestClose} className="modal-button">
-          Close
+          Fermer
         </button>
         <h2 className="modal-header">
-          {selectedEvent ? "Update Event" : "Add Event"}
+          {selectedEvent ? "Mettre à jour" : "Ajouter un évenement"}
         </h2>
         <form className="modal-form" onSubmit={handleSubmit}>
           <div className="form-group">
-            <label htmlFor="event-title">Title</label>
+            <label htmlFor="event-title">Titre</label>
             <input
               id="event-title"
               type="text"
@@ -81,7 +81,7 @@ function EventModal({
             />
           </div>
           <div className="form-group">
-            <label htmlFor="event-start">Start</label>
+            <label htmlFor="event-start">Début</label>
             <input
               id="event-start"
               type="datetime-local"
@@ -93,7 +93,7 @@ function EventModal({
             />
           </div>
           <div className="form-group">
-            <label htmlFor="event-end">End</label>
+            <label htmlFor="event-end">Fin</label>
             <input
               id="event-end"
               type="datetime-local"
@@ -113,12 +113,12 @@ function EventModal({
               className="form-check-input"
             />
             <label htmlFor="event-all-day" className="form-check-label">
-              All Day
+              Toute la journée
             </label>
           </div>
           <div className="modal-buttons">
             <button type="submit" className="modal-button">
-              {selectedEvent ? "Update Event" : "Add Event"}
+              {selectedEvent ? "Mettre à jour" : "Ajouter un évenement"}
             </button>
             {selectedEvent && (
               <button
@@ -126,7 +126,7 @@ function EventModal({
                 onClick={handleDelete}
                 className="modal-delete-button"
               >
-                Delete Event
+                Supprimer
               </button>
             )}
           </div>
